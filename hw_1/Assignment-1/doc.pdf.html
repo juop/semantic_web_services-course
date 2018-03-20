@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:xi="http://www.w3.org/2003/XInclude" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <title>Web Science</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+  /* hdoc_pdf.css */
+  
+  @page {
+     size: A4 portrait;
+     margin-top: 2.5cm;
+     margin-left: 1.5cm;
+     margin-right: 1.5cm;
+     margin-bottom: 2cm;
+     padding: 0cm;
+  
+    @top-left {
+      content: flow(tl-content-flow);
+      vertical-align: bottom;
+      margin-bottom: 0.5cm;
+      padding-bottom:0.1cm;
+      font-family: "Roboto Condensed", sans-serif;
+      border-bottom:1px solid gray;
+    }
+  
+    @top-center {
+      content: flow(tm-content-flow);
+      vertical-align: bottom;
+      margin-bottom: 0.5cm;
+      padding-bottom:0.1cm;
+      font-family: "Roboto Condensed", sans-serif;
+      border-bottom:1px solid gray;
+    }
+  
+    @top-right {
+      content: flow(tr-content-flow);
+      font-size:8pt; /*1em;*/
+      text-align:right;
+      vertical-align: bottom;
+      margin-bottom: 0.5cm;
+      padding-bottom:0.1cm;
+      font-family: "Roboto Condensed", sans-serif;
+      border-bottom:1px solid gray;
+    }
+  
+    @bottom-center {
+      font-size:8pt; /*1em;*/
+      text-align:center;
+      vertical-align: top;
+      margin-top: 0.5cm;
+      padding-top:0.1cm;
+      font-family: "Roboto Condensed", sans-serif;
+    }
+  }
+  .tl-content {
+      flow: static(tl-content-flow);
+      width:5cm;
+      font-size:8pt; /*1em;*/
+      text-align:left;
+  }
+  
+  .tm-content {
+      flow: static(tm-content-flow);
+      width:8cm;
+      font-size:10pt;
+      text-align:center;
+  }
+  
+  .tr-content {
+     /*display: none;*/
+     flow: static(tr-content-flow);
+     width:5cm;
+     font-size:8pt; /*1em;*/
+     text-align:right;
+  }
+  
+  .tr-page {
+     content: "Seite " counter(page) " von " counter(pages);
+  }
+  body {
+     font-family: "Roboto", "Roboto Condensed", sans-serif;
+     font-size:10pt; /*1em;*/
+  }
+  
+  code {
+     font-family: "LettrGoth12 BT", monospace;
+     font-size:1em;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+     font-family: "Roboto Condensed", sans-serif;
+     page-break-after: avoid;
+  }
+  
+  h1 {
+     page-break-before: avoid;
+  }
+  
+  .figure img {
+     margin-left: auto;
+     margin-right: auto;
+     text-align: center;
+     width: 15cm;
+  }
+  
+  table {
+     border: 1px solid #AAAAAA;
+     border-collapse: collapse;
+     caption-side: bottom;
+     margin-left: auto;
+     margin-right: auto;
+  }
+  
+  caption {
+     margin-top: 0.1cm;
+  }
+  
+  th, td {
+     padding: 0.2cm;
+     border: 1px solid #AAAAAA;
+  }
+  
+  p {
+     text-align: justify;
+     -moz-hyphens: auto;
+     -o-hyphens: auto;
+     -webkit-hyphens: auto;
+     -ms-hyphens: auto;
+     hyphens: auto;    
+     hyphenate-limit-chars: auto 3;
+     hyphenate-limit-lines: 2;    
+     prince-hyphenate-before: 3;
+     prince-hyphenate-after: 3;
+     prince-hyphenate-lines: 2;    
+  }
+  
+  p + ul {
+    margin-top: -10px;
+  }
+  
+  td.lineNumbers {
+    width: 5%;
+  }
+  
+  ul {
+     margin-left: 0;
+     padding-left: 1.5em;
+  }
+  
+  ol {
+     margin-left: 0;
+     padding-left: 2em;
+  }
+  
+  blockquote {
+     margin-left: 0;
+     padding-left: 1.5em;
+  }
+  
+  /* EOF */
+  </style>
+  <style type="text/css">
+  /* Syntax-Markierung */
+  
+  pre {
+      /*background-color: #FDF6E3;*/
+      font-family: "LettrGoth12 BT", monospace;
+      font-size: 1.0em;
+      line-height: 1.1em;
+  }
+  
+  .sourceCode {
+      font-family: "LettrGoth12 BT", monospace;
+      font-size: 1.0em;
+      line-height: 1.1em;
+  }
+  
+  @media print {
+     pre {
+         font-size: 9pt;
+         line-height: 12pt;
+     }
+  
+     .sourceCode {
+         font-size: 9pt;
+         line-height: 12pt;
+     }
+  
+     tr.sourceCode {
+        border: 1px solid lightgray;
+     }
+  
+  }
+  
+  .sourceCode tr:nth-of-type(odd) {
+     background-color: transparent;
+  }
+  
+  /* KeyWordTok */
+  .sourceCode .kw { color: #268BD2; }
+  /* DataTypeTok */
+  .sourceCode .dt { color: #268BD2; }
+  
+  /* DecValTok (decimal value), BaseNTok, FloatTok
+  .sourceCode .dv, .sourceCode .bn, .sourceCode .fl { color: #D33682; }
+  /* CharTok */
+  .sourceCode .ch { color: #DC322F; }
+  /* StringTok */
+  .sourceCode .st { color: #2AA198; }
+  /* CommentTok */
+  .sourceCode .co { color: #93A1A1; }
+  /* OtherTok */
+  .sourceCode .ot { color: #A57800; }
+  /* AlertTok */
+  .sourceCode .al { color: #CB4B16; font-weight: bold; }
+  /* FunctionTok */
+  .sourceCode .fu { color: #268BD2; }
+  /* RegionMarkerTok */
+  .sourceCode .re { }
+  
+  /* EOF */
+  </style>
+</head>
+<body>
+<p class="tl-content">
+Opdenplatz, Juliette<br/>Haselwanter, Stefan
+</p>
+<p class="tm-content">
+Web Science<br/><br/>
+</p>
+<p class="tr-content">
+doc.md<br/>rev. 1 / 19.03.2018<br/><span class="tr-page"></span>
+</p> 
+<h1 id="assignment-1"><span class="header-section-number">1</span> Assignment 1</h1>
+<h2 id="evolution-of-the-web"><span class="header-section-number">1.1</span> Evolution of the Web</h2>
+<h3 id="web-1.0"><span class="header-section-number">1.1.1</span> Web 1.0</h3>
+<p>The first stage of the Web era <em>Web 1.0</em> was mainly made up of web pages which were connected by hyperlinks. It mainly consisted of a set of static websites. Users were limited to consuming the content that was presented. There was little to no interactive component or way to contribute content. This is why experts sometimes refer to <em>Web 1.0</em> as &quot;Read-Only&quot; web. The terms &quot;Read-Only&quot; and the corresponding &quot;Read-Write&quot; and &quot;Read-Write-Execute&quot; were by the way coined by <em>Tim Berners-Lee</em> also known as the inventor of the world wide web. However even tho most websites were static there already was some kind of interaction on some websites. Those were mostly e-commerce websites whose shopping cart applications are basically falling under the category of <em>Web 1.0</em>.</p>
+<p>With the development of <em>Web 1.0</em> the information age was born. During the <em>dot-com boom</em> the amount of websites increased rapidly which lead to a period of excessive speculation and thus to a historic economic bubble.</p>
+<h3 id="web-2.0"><span class="header-section-number">1.1.2</span> Web 2.0</h3>
+<p>The <em>Web 2.0</em> era erased the lack of active interaction of common users. When exactly the transition from <em>Web 1.0</em> to <em>Web 2.0</em> cannot be determined. The change happened more gradually. With the user's interactions and contributions becoming a new component, the web could now be called &quot;Read-Write&quot; web. Due to the now emerging <em>social-media</em> it's also known as the <em>social-web</em>.</p>
+<p>A lot of new concepts like blogs, social-media and media-sharing were introduced and made the once so one-sided relationship of publisher to consumer become more balanced. Even users without any technical background can now contribute.</p>
+<h3 id="web-3.0"><span class="header-section-number">1.1.3</span> Web 3.0</h3>
+<p>Since the web mainly consists of information written in human readable languages, they are most likely not easy to interpret for machines. <em>Semantic Web</em> or <em>Web 3.0</em> tries to fill this communication gap. It makes data accessible to machines by using <em>semantic web technologies</em> such as RDF, OWL, SKOS or SPARQL. Those techniques provide an environment where applications can query some data, draw inferences using vocabularies and so on. This version of the web can be called &quot;Read-Write-Execute&quot; web since applications are now able understand and work with the data.</p>
+<p>Semantic markup, which is used to enrich some data with meta data for context, empowers the meaning of web services as we know them. Web services are software systems designed to support computer-to-computer interaction over the internet. However, in the context of <em>Web 3.0</em>, they become more important.</p>
+<p><strong>Example:</strong> Wolfram Alpha is a computational knowledge engine which uses its own internal knowledge base with its own internal semantics and ontology. You can for example enter &quot;3 pretzels vs 1 bread&quot; and you will get comparisons of ingredients and calorie contents.</p>
+<p>It does so by taking a large amount of raw information and performing computations using those data. It produces pages of new information that have never existed on the internet. Google however provides you with links to pre-exisiting data. In a nutshell Google provides links to websites which <em>might</em> provide answers while Wofram Alpha provides answers. It does so by generating data, for example statistics by processing data provided by different databases which contain structured data. The data has to be structured to enable the knowledge engine to process it.</p>
+<hr />
+<h2 id="computer-science-of-the-21st-century"><span class="header-section-number">1.2</span> Computer Science of the 21st Century</h2>
+<p>While computer science is all about how computers work, web science is a completely different multi-disciplinary field, in which researchers try to understand what the web is, how it affects us and how we can prepare its future. These are questions which cannot be answered by computer science alone. Web science research will make us design and build more complex human-oriented systems.</p>
+<p>Computer science also is <em>synthetic</em>. It is made up by humans and all about designing formalisms and algorithms to solve specific problems, by using mathematical models which are themselves made up by humans. To the contrary natural sciences such as chemistry, biology and physics are <em>analytic</em> disciplines that aim to find laws that explain observed phenomena. Since Web science is such an interdisciplinary field it follows that there at least have to be some scientific methods that are a combination of both of these paradigms.</p>
+<hr />
+<h2 id="data-science-web-and-social-considerations"><span class="header-section-number">1.3</span> Data Science Web and Social Considerations</h2>
+<p>Any decision process (human or alhorithm) that decides what to include, exclude, or emphasize in information processing has the potential to include biases. Algorithms can not understand concepts like racism but for example if some measurable criteria they use to exclude some sort of information accidently correlates with race divides, they might appear to have a racial bias.</p>
+<p><strong>Example:</strong> Google News was one of the first platforms to attempt to aggregate and personalize news with algorithms. Its algorithm ranks and groups news articles by frequency of appearance, source, freshness, location, relevance and diversity. Unless explicitely programmed to do so an algorithm will never favorite one thing over another just because it likes the one thing more than the other. However Google News will show you news according to its criteria. So for example might tell you more about specific political parties if one presidential candidate appears more often in the media (frequence of appearance). So the site might seem biased even though the algorithm isn't, at least not intentionally. Think about the two party system in the USA, there's actually more parties which you hardly ever hear about, unless you're specifically searching for them.</p>
+<p>To quote Nick Diakopoulos:</p>
+<blockquote>
+<blockquote>
+<p>It can be easy to succumb to the fallacy that, because computer algorithms are systematic, they must somehow be more &quot;objective&quot;. But it is in fact such systematic biases that are the most insidious since they often go unnoticed and unquestioned. Even robots have biases.</p>
+</blockquote>
+</blockquote>
+<p>There are also ways that biases in information that is to be processed, can influence the decision making of algorithms in a way that the algorithm outputs biased information as well. Thus biases in algorithms can occur when an algorithm uses data that is already biased. Biases in news are a good example since the content is created by humans. Those contents are almost always biased. <em>The Propaganda Model</em> by Noam Chomsky and Edward S. Herman explains how systematic biases work in mass media. However we're not going to get too political here, but it's definitely worth a read.</p>
+</body>
+</html>
