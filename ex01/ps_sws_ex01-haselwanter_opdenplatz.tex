@@ -20,18 +20,18 @@
 The first stage of the web era was mainly made up of web pages which provided static content (e.g., text, images) wrapped in HTML.
 Different websites were connected by hyperlinks and there was little to no interactive component or way to contribute content.
 Therefore, users were limited to consuming the content presented by the browser.
-That is why Web 1.0 is sometimes referred to as \emph{Read-only Web}.
+That is why Web 1.0 is sometimes referred to as \emph{Read-Only Web}.
 The client-server communication over HTTP was basically uni-directional and resources like files were accessed using URIs.
 Even though most websites were static, a few of them already provided some kind of interaction.
 Those were mostly e-commerce websites with basic shopping cart applications.
 
 \subsection*{Web 2.0 -- Social Web}
 The transition from Web 1.0 to Web 2.0 happened more gradually and introduced two-way interactions between users and machines.
-With the establishment of interactive web applications (AJAX) and services (APIs), the user become both the content consumer and content provider.
+With the establishment of interactive web applications (AJAX) and services (APIs), the user became both the content consumer and content provider.
 New platforms like social media, wikis, blogs, boards, etc. arised to communicate and exchange information with each other over the web and changed the attitude from media for individuals towards media for communities (\emph{Read-Write Web} or \emph{Social Web}).
 In addition, the concept of social networking (blogging, tagging, sharing) enabled a strong collaboration between users on the Internet (e.g., Wikipedia).
 Even users without any technical background were able to contribute.
-Beside the human-to-human interaction, human and machine computing were integrated as a further extension.
+Besides the human-to-human interaction, human and machine computing were integrated as a further extension.
 For example, in \emph{Amazon Mechanical Turk}, users are able to post jobs or tasks (e.g., processing photographs, information collecting, data cleaning) that are then browsed and completed by other users in exchange for money.
 
 \subsection*{Web 3.0 -- Semantic Web}
@@ -67,11 +67,11 @@ To the contrary, natural sciences such as chemistry, biology, and physics are an
 Since the web is such a heterogeneous, decentralized, fast changing, and huge scaling system, there have to be at least some scientific methods which are combinations of both paradigms.
 
 \section{Data Science, Web and Social Considerations}
-Any decision process (human or algorithm) that decides what to include, exclude, or emphasize in information processing has the potential to include biases.
-Algorithms can not understand concepts like racism.
+Any decision process (human or algorithm) that decides what to include, exclude, or emphasize in information processing has the potential to include biases in their output.
+It is clear that algorithms can not understand concepts like racism.
 But, for example, if they use measurable criteria to exclude some sort of information which accidently correlates with race divides, they might appear to have a racial bias.
 
-\textbf{Example.} \emph{Google News} was one of the first platforms attempting to aggregate and personalize news with algorithms.
+\textbf{Example:} \emph{Google News} was one of the first platforms attempting to aggregate and personalize news with algorithms.
 Its algorithm ranks and groups news articles by frequency of appearance, source, freshness, location, relevance, and diversity.
 Unless explicitely programmed, an algorithm will never favorite one thing over another just because it likes the one thing more than the other.
 However, Google News will show you news according to its criteria.
@@ -81,7 +81,10 @@ When thinking about the two party system in the USA, there are actually more par
 
 There are also ways that biases in information that is to be processed can influence the decision making of algorithms in a way that the algorithm outputs biased information as well.
 Thus, biases in algorithms can occur when an algorithm uses data that is already biased.
-Biases in news are a good example since the content is created by humans and is almost always biased.
+If data is created by humans and it is most likely biased, so using this data as input to algorithms will often produce biased output.
+
+\textbf{Example:} You can take data about regional crime rates to compute where more police patrols and the like are needed. However there might already be biases in police recorded data due to racial profiling. Using this kind of data can lead to a result which recommends increasing police activity where the majority of the population is of a certain race.
+
 % To quote Nick Diakopoulos:
 % It can be easy to succumb to the fallacy that, because computer algorithms are systematic, they
 % must somehow be more "objective". But it is in fact such systematic biases that are the most insid-
