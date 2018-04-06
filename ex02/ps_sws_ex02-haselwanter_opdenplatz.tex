@@ -15,6 +15,27 @@
 
 
 \section{SOA and SESA}
+Service-oriented architecture (SOA) groups different functionalities (services) around business processes which are built on low abstraction levels.
+Applications can access these services through a standardized communication protocol over a network in order to to exchange data with one another.
+SOA units can be combined (\emph{orchestrated}) to built more complex and larger software applications on a higher abstraction level.
+Hence, SOA is less about modular programming of software applications, and more about how to compose an application by integrating distributed, separately-maintained and deployed software components.
+SOA aims to completely abstract away the underlying complexity of a service such that users can access these services without any knowledge of their internal implementation.
+Further, SOA provides loose coupling between services in order to independently use and reuse them.
+
+Machine processable semantics need to be added to bring SOAs to their full potential and make it scalable by describing important service aspects,
+e.g., negotiation, discovery, adaptation, composition, invocation, monitoring, data and process mediation.
+
+\begin{description}
+  \item[Formal contract] Define functionality, interaction, data types, data models, policies, assertions.
+  \item[Loose coupling] Dependencies to components, resources, service consumers, etc.
+  \item[Abstraction] Hide as much of the underlying details (technology, functionality, logic, QoS) as possible.
+  \item[Reusability] Independent logic that is divided into various services and can be reused for future purposes.
+  \item[Autonomy] Control the encapsulated functionality at runtime and design-time.
+  \item[Statelessness] Do not retain states to achieve concurrent access scaling.
+  \item[Discoverability] Avoid creating bad, redundant, ... services.
+  Properly find, identify, and communicate with services using metadata from anywhere.
+  \item[Composability] Combine different services to get new services instead of building from scratch.
+\end{description}
 
 \section{People as a Service}
 
