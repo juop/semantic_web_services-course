@@ -1,0 +1,15 @@
+// this is actually a python dict
+{
+	'AssignmentId': 'string',
+	'WorkerId': 'string',
+	'HITId': 'string',
+	'AssignmentStatus': 'Submitted'|'Approved'|'Rejected',
+	'AutoApprovalTime': datetime(2015, 1, 1),
+	'AcceptTime': datetime(2015, 1, 1),
+	'SubmitTime': datetime(2015, 1, 1),
+	'ApprovalTime': datetime(2015, 1, 1),
+	'RejectionTime': datetime(2015, 1, 1),
+	'Deadline': datetime(2015, 1, 1),
+	'Answer': 'string',
+	'RequesterFeedback': 'string'
+} 
