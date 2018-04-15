@@ -1,0 +1,228 @@
+\documentclass[a4paper]{article}
+\usepackage[top=1in, bottom=1.25in, left=1.25in, right=1.25in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{hyperref}
+\usepackage{listings}
+\lstset{
+  basicstyle=\footnotesize,
+  language=java,
+  breaklines=true,
+  tabsize=2,
+}
+
+\title{\textbf{Semantic Web Services}\\\large{Assignment 3}}
+\author{Stefan Haselwanter\\Juliette Opdenplatz}
+
+
+\begin{document}
+
+\maketitle
+
+
+\section{SOAP Web Services}
+\begin{lstlisting}[caption=Request \& Response for \emph{getProductList()}]
+---[HTTP request]---
+Accept: text/xml, multipart/related
+Connection: keep-alive
+Host: localhost:4434
+User-agent: JAX-WS RI 2.2.9-b130926.1035 svn-revision#5f6196f2b90e9460065a4c2f4e30e065b245e51e
+Content-type: text/xml; charset=utf-8
+Soapaction: "http://ex03_soap.group7.sws.uibk.ac.at/IProductService/getProductListRequest"
+Content-length: 209
+<?xml version="1.0" ?>
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+  <S:Body>
+    <ns2:getProductList xmlns:ns2="http://ex03_soap.group7.sws.uibk.ac.at/"></ns2:getProductList>
+  </S:Body>
+</S:Envelope>--------------------
+
+---[HTTP response 200]---
+Date: Sun, 15 Apr 2018 14:56:27 GMT
+Transfer-encoding: chunked
+Content-type: text/xml; charset=utf-8
+<?xml version="1.0" ?>
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+  <S:Body>
+    <ns2:getProductListResponse xmlns:ns2="http://ex03_soap.group7.sws.uibk.ac.at/">
+      <return>
+        <productId>1</productId>
+        <name>Product 0</name>
+        <price>76.19510733034993</price>
+      </return>
+      <return>
+        <productId>2</productId>
+        <name>Product 1</name>
+        <price>25.011139160308794</price>
+      </return>
+      <return>
+        <productId>3</productId>
+        <name>Product 2</name>
+        <price>21.00335399134704</price>
+      </return>
+      <return>
+        <productId>4</productId>
+        <name>Product 3</name>
+        <price>29.17199308628683</price>
+      </return>
+      <return>
+        <productId>5</productId>
+        <name>Product 4</name>
+        <price>47.471766445795325</price>
+      </return>
+      <return>
+        <productId>6</productId>
+        <name>Product 5</name>
+        <price>8.92248580120577</price>
+      </return>
+      <return>
+        <productId>7</productId>
+        <name>Product 6</name>
+        <price>55.33865997201628</price>
+      </return>
+      <return>
+        <productId>8</productId>
+        <name>Product 7</name>
+        <price>98.23981798191706</price>
+      </return>
+      <return>
+        <productId>9</productId>
+        <name>Product 8</name>
+        <price>48.80248695740037</price>
+      </return>
+      <return>
+        <productId>10</productId>
+        <name>Product 9</name>
+        <price>82.37709602984727</price>
+      </return>
+    </ns2:getProductListResponse>
+  </S:Body>
+</S:Envelope>--------------------
+\end{lstlisting}
+
+\begin{lstlisting}[caption=Request \& Response for \emph{getProduct()}]
+---[HTTP request]---
+Accept: text/xml, multipart/related
+Connection: keep-alive
+Host: localhost:4434
+User-agent: JAX-WS RI 2.2.9-b130926.1035 svn-revision#5f6196f2b90e9460065a4c2f4e30e065b245e51e
+Content-type: text/xml; charset=utf-8
+Soapaction: "http://ex03_soap.group7.sws.uibk.ac.at/IProductService/getProductRequest"
+Content-length: 215
+<?xml version="1.0" ?>
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+  <S:Body>
+    <ns2:getProduct xmlns:ns2="http://ex03_soap.group7.sws.uibk.ac.at/">
+      <arg0>1</arg0>
+    </ns2:getProduct>
+  </S:Body>
+</S:Envelope>--------------------
+
+---[HTTP response 200]---
+Date: Sun, 15 Apr 2018 14:56:27 GMT
+Transfer-encoding: chunked
+Content-type: text/xml; charset=utf-8
+<?xml version="1.0" ?>
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+  <S:Body>
+    <ns2:getProductResponse xmlns:ns2="http://ex03_soap.group7.sws.uibk.ac.at/">
+      <return>
+        <productId>1</productId>
+        <name>Product 0</name>
+        <price>76.19510733034993</price>
+      </return>
+    </ns2:getProductResponse>
+  </S:Body>
+</S:Envelope>--------------------
+\end{lstlisting}\vspace{0.5cm}
+
+\begin{lstlisting}[caption=Request \& Response for \emph{order()}]
+---[HTTP request]---
+Accept: text/xml, multipart/related
+Connection: keep-alive
+Host: localhost:4434
+User-agent: JAX-WS RI 2.2.9-b130926.1035 svn-revision#5f6196f2b90e9460065a4c2f4e30e065b245e51e
+Content-type: text/xml; charset=utf-8
+Soapaction: "http://ex03_soap.group7.sws.uibk.ac.at/IProductService/orderRequest"
+Content-length: 219
+<?xml version="1.0" ?>
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+  <S:Body>
+    <ns2:order xmlns:ns2="http://ex03_soap.group7.sws.uibk.ac.at/">
+      <arg0>2</arg0>
+      <arg1>3</arg1>
+    </ns2:order>
+  </S:Body>
+</S:Envelope>--------------------
+
+---[HTTP response 200]---
+Date: Sun, 15 Apr 2018 14:56:27 GMT
+Transfer-encoding: chunked
+Content-type: text/xml; charset=utf-8
+<?xml version="1.0" ?>
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+  <S:Body>
+    <ns2:orderResponse xmlns:ns2="http://ex03_soap.group7.sws.uibk.ac.at/">
+      <return>true</return>
+    </ns2:orderResponse>
+  </S:Body>
+</S:Envelope>--------------------
+\end{lstlisting}\vspace{0.5cm}
+
+\begin{lstlisting}[caption=Request \& Response for SOAP Fault in \emph{getProduct()}]
+---[HTTP request]---
+Accept: text/xml, multipart/related
+Connection: keep-alive
+Host: localhost:4434
+User-agent: JAX-WS RI 2.2.9-b130926.1035 svn-revision#5f6196f2b90e9460065a4c2f4e30e065b245e51e
+Content-type: text/xml; charset=utf-8
+Soapaction: "http://ex03_soap.group7.sws.uibk.ac.at/IProductService/getProductRequest"
+Content-length: 216
+<?xml version="1.0" ?>
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+  <S:Body>
+    <ns2:getProduct xmlns:ns2="http://ex03_soap.group7.sws.uibk.ac.at/">
+      <arg0>11</arg0>
+    </ns2:getProduct>
+  </S:Body>
+</S:Envelope>--------------------
+
+---[HTTP response 500]---
+Date: Sun, 15 Apr 2018 14:56:26 GMT
+Transfer-encoding: chunked
+Content-type: text/xml; charset=utf-8
+<?xml version="1.0" ?>
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+  <S:Body>
+    <S:Fault xmlns:ns4="http://www.w3.org/2003/05/soap-envelope" xmlns="">
+      <faultcode>S:Server</faultcode>
+      <faultstring>Product with ID='11' not found.</faultstring>
+      <detail>
+        <ns2:ProductNotFoundBean xmlns:ns2="http://ex03_soap.group7.sws.uibk.ac.at/">
+          <message>Product with ID='11' not found.</message>
+        </ns2:ProductNotFoundBean>
+      </detail>
+    </S:Fault>
+  </S:Body>
+</S:Envelope>--------------------
+\end{lstlisting}
+
+\begin{lstlisting}[caption=SOAP Fault as user-defined \emph{ProductNotFoundException}]
+Exception in thread "main" at.ac.uibk.sws.group7.ex03_soap.exceptions.ProductNotFoundException: Product with ID='11' not found.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.sun.xml.internal.ws.fault.SOAPFaultBuilder.createException(SOAPFaultBuilder.java:135)
+	at com.sun.xml.internal.ws.client.sei.StubHandler.readResponse(StubHandler.java:238)
+	at com.sun.xml.internal.ws.db.DatabindingImpl.deserializeResponse(DatabindingImpl.java:189)
+	at com.sun.xml.internal.ws.db.DatabindingImpl.deserializeResponse(DatabindingImpl.java:276)
+	at com.sun.xml.internal.ws.client.sei.SyncMethodHandler.invoke(SyncMethodHandler.java:104)
+	at com.sun.xml.internal.ws.client.sei.SyncMethodHandler.invoke(SyncMethodHandler.java:77)
+	at com.sun.xml.internal.ws.client.sei.SEIStub.invoke(SEIStub.java:147)
+	at com.sun.proxy.$Proxy26.getProduct(Unknown Source)
+	at at.ac.uibk.sws.group7.ex03_soap.WsClient.main(WsClient.java:18)
+\end{lstlisting}
+
+\end{document}
