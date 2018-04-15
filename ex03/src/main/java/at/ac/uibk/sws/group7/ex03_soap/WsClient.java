@@ -1,6 +1,7 @@
 package at.ac.uibk.sws.group7.ex03_soap;
 
-import javax.xml.namespace.QName;
+import at.ac.uibk.sws.group7.ex03_soap.services.IProductService;
+
 import javax.xml.ws.Service;
 import java.net.URL;
 import java.util.Arrays;
@@ -9,18 +10,17 @@ import java.util.Arrays;
  * Created by shasi on 4/15/18.
  */
 public class WsClient {
-    public static void main(final String[] args) throws Throwable {
+    public static void main(final String[] args) throws Exception {
         if (args.length == 0) {
             System.err.println("No service method specified.");
             System.exit(1);
         }
 
-        Service service = Service.create(
-                new URL(WsServer.URL + "?wsdl"),
-                new QName("http://ex03_soap.group7.sws.uibk.ac.at/", "ProductServiceService")
-        );
+        // Instantiate product service.
+        Service service = Service.create(new URL(WsServer.WSDL_URL), WsServer.QNAME);
         IProductService productService = service.getPort(IProductService.class);
 
+        // Decide which method to execute.
         switch (args[0]) {
             case "getProduct":
                 if (args.length > 1) {

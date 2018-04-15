@@ -1,4 +1,4 @@
-package at.ac.uibk.sws.group7.ex03_soap;
+package at.ac.uibk.sws.group7.ex03_soap.services;
 
 import at.ac.uibk.sws.group7.ex03_soap.exceptions.ProductNotFoundBean;
 import at.ac.uibk.sws.group7.ex03_soap.exceptions.ProductNotFoundException;
@@ -11,7 +11,7 @@ import java.util.Random;
 /**
  * Created by shasi on 4/15/18.
  */
-@WebService(endpointInterface = "at.ac.uibk.sws.group7.ex03_soap.IProductService")
+@WebService(endpointInterface = "at.ac.uibk.sws.group7.ex03_soap.services.IProductService")
 public class ProductService implements IProductService {
     private List<Product> products;
 

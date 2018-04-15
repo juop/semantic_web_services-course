@@ -1,11 +1,13 @@
 package at.ac.uibk.sws.group7.ex03_soap;
 
 import at.ac.uibk.sws.group7.ex03_soap.exceptions.ProductNotFoundException;
+import at.ac.uibk.sws.group7.ex03_soap.services.IProductService;
+import at.ac.uibk.sws.group7.ex03_soap.services.Product;
+import at.ac.uibk.sws.group7.ex03_soap.services.ProductService;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import javax.xml.namespace.QName;
 import javax.xml.ws.Endpoint;
 import javax.xml.ws.Service;
 import java.net.URL;
@@ -20,23 +22,16 @@ import static org.junit.Assert.*;
  */
 public class ProductServiceTest {
     private static final Logger LOGGER = Logger.getLogger(ProductServiceTest.class.getName());
-    private static final QName QNAME = new QName(
-            "http://ex03_soap.group7.sws.uibk.ac.at/",
-            "ProductServiceService"
-    );
 
     private static Endpoint server;
     private static IProductService productService;
 
     @BeforeClass
     public static void setup() throws Exception {
-//        server = Endpoint.publish(WsServer.URL, new ProductService());
+        server = Endpoint.publish(WsServer.URL, new ProductService());
 
         LOGGER.info("Attempting to initiate service...");
-        Service service = Service.create(
-                new URL(WsServer.URL + "?wsdl"),
-                QNAME
-        );
+        Service service = Service.create(new URL(WsServer.WSDL_URL), WsServer.QNAME);
 
         productService = service.getPort(IProductService.class);
 
@@ -49,7 +44,7 @@ public class ProductServiceTest {
 
     @AfterClass
     public static void cleanup() {
-//        server.stop();
+        server.stop();
     }
 
     @Test

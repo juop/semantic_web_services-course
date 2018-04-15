@@ -1,4 +1,4 @@
-package at.ac.uibk.sws.group7.ex03_soap;
+package at.ac.uibk.sws.group7.ex03_soap.services;
 
 import at.ac.uibk.sws.group7.ex03_soap.exceptions.ProductNotFoundException;
 
