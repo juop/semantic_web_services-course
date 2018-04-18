@@ -89,15 +89,37 @@ public class ProductServiceTest {
 
     @Test
     public void testOrderPlaced() {
-        LOGGER.info("Order product...");
+        LOGGER.info("Order product successfully...");
 
-        assertTrue(productService.order(2, 3));
+        try {
+            assertTrue(productService.order(2, 3));
+        } catch (ProductNotFoundException e) {
+            fail();
+        }
     }
 
     @Test
-    public void testOrderDeclined() {
-        LOGGER.info("Order product...");
+    public void testOrderDeclinedNotFound() {
+        LOGGER.info("Order unknown product...");
 
-        assertFalse(productService.order(11, 3));
+        try {
+            productService.order(11, 3);
+            fail();
+        } catch (ProductNotFoundException e) {
+            // Ignore.
+        }
+
+        assertTrue(true);
+    }
+
+    @Test
+    public void testOrderDeclinedQuantity() {
+        LOGGER.info("Order product wrong quantity...");
+
+        try {
+            assertFalse(productService.order(1, -1));
+        } catch (ProductNotFoundException e) {
+            fail();
+        }
     }
 }

@@ -7,14 +7,14 @@
   xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy"
   xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata"
   xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
-  xmlns:tns="http://ex03_soap.group7.sws.uibk.ac.at/"
+  xmlns:tns="http://services.ex03_soap.group7.sws.uibk.ac.at/"
   xmlns:xsd="http://www.w3.org/2001/XMLSchema"
   xmlns="http://schemas.xmlsoap.org/wsdl/"
-  targetNamespace="http://ex03_soap.group7.sws.uibk.ac.at/"
+  targetNamespace="http://services.ex03_soap.group7.sws.uibk.ac.at/"
   name="ProductServiceService">
   <types>
     <xsd:schema>
-      <xsd:import namespace="http://ex03_soap.group7.sws.uibk.ac.at/" schemaLocation="http://localhost:4434/productService?xsd=1"></xsd:import>
+      <xsd:import namespace="http://services.ex03_soap.group7.sws.uibk.ac.at/" schemaLocation="http://localhost:4434/productService?xsd=1"></xsd:import>
     </xsd:schema>
   </types>
   <message name="getProduct">
@@ -40,17 +40,18 @@
   </message>
   <portType name="IProductService">
     <operation name="getProduct">
-      <input wsam:Action="http://ex03_soap.group7.sws.uibk.ac.at/IProductService/getProductRequest" message="tns:getProduct"></input>
-      <output wsam:Action="http://ex03_soap.group7.sws.uibk.ac.at/IProductService/getProductResponse" message="tns:getProductResponse"></output>
-      <fault message="tns:ProductNotFoundException" name="ProductNotFoundException" wsam:Action="http://ex03_soap.group7.sws.uibk.ac.at/IProductService/getProduct/Fault/ProductNotFoundException"></fault>
+      <input wsam:Action="http://services.ex03_soap.group7.sws.uibk.ac.at/IProductService/getProductRequest" message="tns:getProduct"></input>
+      <output wsam:Action="http://services.ex03_soap.group7.sws.uibk.ac.at/IProductService/getProductResponse" message="tns:getProductResponse"></output>
+      <fault message="tns:ProductNotFoundException" name="ProductNotFoundException" wsam:Action="http://services.ex03_soap.group7.sws.uibk.ac.at/IProductService/getProduct/Fault/ProductNotFoundException"></fault>
     </operation>
     <operation name="getProductList">
-      <input wsam:Action="http://ex03_soap.group7.sws.uibk.ac.at/IProductService/getProductListRequest" message="tns:getProductList"></input>
-      <output wsam:Action="http://ex03_soap.group7.sws.uibk.ac.at/IProductService/getProductListResponse" message="tns:getProductListResponse"></output>
+      <input wsam:Action="http://services.ex03_soap.group7.sws.uibk.ac.at/IProductService/getProductListRequest" message="tns:getProductList"></input>
+      <output wsam:Action="http://services.ex03_soap.group7.sws.uibk.ac.at/IProductService/getProductListResponse" message="tns:getProductListResponse"></output>
     </operation>
     <operation name="order">
-      <input wsam:Action="http://ex03_soap.group7.sws.uibk.ac.at/IProductService/orderRequest" message="tns:order"></input>
-      <output wsam:Action="http://ex03_soap.group7.sws.uibk.ac.at/IProductService/orderResponse" message="tns:orderResponse"></output>
+      <input wsam:Action="http://services.ex03_soap.group7.sws.uibk.ac.at/IProductService/orderRequest" message="tns:order"></input>
+      <output wsam:Action="http://services.ex03_soap.group7.sws.uibk.ac.at/IProductService/orderResponse" message="tns:orderResponse"></output>
+      <fault message="tns:ProductNotFoundException" name="ProductNotFoundException" wsam:Action="http://services.ex03_soap.group7.sws.uibk.ac.at/IProductService/order/Fault/ProductNotFoundException"></fault>
     </operation>
   </portType>
   <binding name="ProductServicePortBinding" type="tns:IProductService">
@@ -84,6 +85,9 @@
       <output>
         <soap:body use="literal"></soap:body>
       </output>
+      <fault name="ProductNotFoundException">
+        <soap:fault name="ProductNotFoundException" use="literal"></soap:fault>
+      </fault>
     </operation>
   </binding>
   <service name="ProductServiceService">

@@ -36,5 +36,5 @@ public interface IProductService {
      * @return True if the order is successful, false otherwise.
      */
     @WebMethod
-    boolean order(int productId, int quantity);
+    boolean order(int productId, int quantity) throws ProductNotFoundException;
 }

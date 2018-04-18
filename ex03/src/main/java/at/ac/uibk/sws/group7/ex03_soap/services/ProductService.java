@@ -46,13 +46,12 @@ public class ProductService implements IProductService {
     }
 
     @Override
-    public boolean order(int productId, int quantity) {
+    public boolean order(int productId, int quantity) throws ProductNotFoundException {
         if (quantity > 0) {
-            for (Product p : products)
-                if (p.productId == productId) {
-                    // Place order.
-                    return true;
-                }
+            Product p = getProduct(productId);
+
+            // Place order.
+            return true;
         }
 
         return false;
