@@ -61,5 +61,5 @@ WHERE {
 |[Salzburg (state)](http://dbpedia.org/resource/Salzburg_(state))|"Salzburg (state)"@en|[Salzburg](http://dbpedia.org/resource/Salzburg)|"Salzburg"@en|13.0333|47.8|
 |[Voralberg](http://dbpedia.org/resource/Voralberg)|"Voralberg"@en|[Bregenz](http://dbpedia.org/resource/Bregenz)|"Bregenz"@en|9.74917|47.505|
 |[Burgenland](http://dbpedia.org/resource/Burgenland)|"Burgenland"@en|[Eisenstadt](http://dbpedia.org/resource/Eisenstadt)|"Eisenstadt"@en|16.5167|47.85|
-|[Lower Austria](http://dbpedia.org/resource/Lower Austria)|"Lower Austria"@en|[Sankt Pölten](http://dbpedia.org/resource/Sankt_Pölten)|"Sankt Pölten"@en|15.6167|48.2|
+|[Lower Austria](http://dbpedia.org/resource/Lower_Austria)|"Lower Austria"@en|[Sankt Pölten](http://dbpedia.org/resource/Sankt_Pölten)|"Sankt Pölten"@en|15.6167|48.2|
 |[Vienna](http://dbpedia.org/resource/Vienna)|"Vienna"@en|[Vienna](http://dbpedia.org/resource/Vienna)|"Vienna"@en|16.3667|48.2|
