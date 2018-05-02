@@ -19,8 +19,8 @@ Submit the complete query and query results.
 
 # SPARQL Query
 
-Note that the first subquery somehow doesn't include Vienna so we do a union where we specifically just include a row for it.
-It gets a little ugly but for the sake of complemeteness we do it like that.
+Note that the first subquery doesn't include Vienna because there is no _seat_ attribute for it, so we do a union where we specifically just include a row for Vienna.
+It gets a little ugly but for the sake of completeness we do it like that.
 
 ```sparql
 SELECT DISTINCT ?state ?state_label ?capital ?capital_label ?lon_label ?lat_label
