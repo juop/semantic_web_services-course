@@ -23,9 +23,6 @@ Note that the first subquery somehow doesn't include Vienna so we do a union whe
 It gets a little ugly but for the sake of complemeteness we do it like that.
 
 ```sparql
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX dbo: <http://dbpedia.org/ontology/>
-
 SELECT DISTINCT ?state ?state_label ?capital ?capital_label ?lon_label ?lat_label
 WHERE {  
   {
