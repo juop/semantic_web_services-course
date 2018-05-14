@@ -1,0 +1,56 @@
+\documentclass[a4paper]{article}
+\usepackage[top=1in, bottom=1.25in, left=1.25in, right=1.25in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{hyperref}
+
+\title{\textbf{Semantic Web Services}\\\large{Assignment 6}}
+\author{Stefan Haselwanter\\Juliette Opdenplatz}
+
+
+\begin{document}
+
+\maketitle
+
+\section{Question: What is Process Mediation?\\(WSMO, WSML, WSMX stack)}
+
+What is process mediation? Why do we need it? Explain in the context of
+semantic web services. Examine the process mediation example in lecture slides
+and suggest another scenario.
+
+\section{Answer}
+
+Heterogeneity can and most certainly will be a problem in collaborative tasks 
+that depend on a large number of different processes.
+There can already be problems if there are just two processes involved, 
+that is, one process might depend on data, the other process generates.
+This is especially a problem when we think about semantic web service
+and how those services might interact with each other.
+
+To overcome interoperability problems like this we need process mediation. 
+Heterogeneities can appear in terms of data, ontology, process or protocol,
+thus mediators can be distiguished by respective levels.
+They might for example mediate either heterogeneous data sources 
+or heterogeneous communication patterns.
+
+Of course there are frameworks that offer the ability to implement process mediation. 
+The one of most importance is the WSMO approach:
+\begin{description}
+	\item[Web Service Modelling Ontology (WSMO)] Mediation is a first class citizen.
+		WSMO offers specific means to semantically describe concrete mediation 
+		solutions and to directly refer to them when needed (e.g. from ontologies or Web services).
+	\item[Web Service Modeling Language (WSML)] A language for the WSMO approach.
+		\begin{enumerate}
+			\item RDFS and OWL have no support for web services, goals or mediators
+			\item OWL-S is not expressive enough to cover all aspects of Web Services
+		\end{enumerate}
+	\item[Web Service Execution Environment (WSMX)] An execution environment to enable the WSMO approach.
+		\begin{enumerate}
+			\item Service offerings, required capabilities and exchanged data are semantically annotated
+			\item An environment to bridge service providers and requesters
+			\item Automation of tasks with reasoning
+		\end{enumerate}
+\end{description}
+
+\end{document}
