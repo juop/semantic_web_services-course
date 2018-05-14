@@ -3,7 +3,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
 \usepackage[T1]{fontenc}
-\usepackage{hyperref}
+\usepackage{listings}
 
 \title{\textbf{Semantic Web Services}\\\large{Assignment 6}}
 \author{Stefan Haselwanter\\Juliette Opdenplatz}
@@ -33,6 +33,9 @@ Heterogeneities can appear in terms of data, ontology, process or protocol,
 thus mediators can be distiguished by respective levels.
 They might for example mediate either heterogeneous data sources 
 or heterogeneous communication patterns.
+Therefore process mediation could be conceptualized
+as a {\em middleware} that coordinates the
+interaction between web services.
 
 Of course there are frameworks that offer the ability to implement process mediation. 
 The one of most importance is the WSMO approach:
@@ -52,5 +55,44 @@ The one of most importance is the WSMO approach:
 			\item Automation of tasks with reasoning
 		\end{enumerate}
 \end{description}
+
+\section{Example Scenario}
+
+So imagine an end-user travel web service that dynamically uses and
+aggregates other web services and consider that a client uses a different ontology than
+the web service description of the travel service.
+
+So our example is about ontology mapping, 
+which involves the creation of a set of rules that
+precisely define how terms from one ontology
+relate with terms from the other ontology.
+These rules are expressed using a mapping language
+which does not alter any ontology involved, 
+because it is only about mapping definitions.
+
+We consider the following example for illustrating terminology mismatches.
+The ontology used by the requestor contains the concept station: 
+\begin{lstlisting}
+concept station
+startLocation impliesType boolean
+destinationLocation impliesType boolean
+name impliesType string
+\end{lstlisting}
+The ontology used by the provider contains the concept route:
+\begin{lstlisting}
+concept route
+from hasType (0 1) string
+to hasType (0 1) string
+\end{lstlisting}
+There are two terminological mismatches. 
+The first mismatch occurs because the attribute {\em startLocation}
+of the concept {\em station} corresponds to the attribute from the {\em route} concept.
+
+And the second mismatch occurs due to the fact that the attribute
+{\em destinationLocation} of the concept station Corresponds to
+the attribute to of the {\em route} concept. In order to allow automated processing
+by ontology mapping, we need to create three mapping rules: one for stating
+the relation between the two concepts and two for imposing the mappings between
+their attributes.
 
 \end{document}
