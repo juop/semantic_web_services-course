@@ -8,3 +8,5 @@
  - [Assignment 4](https://github.com/juop/semantic_web_services-course/tree/master/ex04)
  - [Assignment 5](https://github.com/juop/semantic_web_services-course/tree/master/ex05)
  - [Assignment 6](https://github.com/juop/semantic_web_services-course/tree/master/ex06)
+ - [Hotel API](https://github.com/sws-group-7/hotel-api)
+ - [Hotel Client](https://github.com/sws-group-7/hotel-client)
